@@ -23,3 +23,5 @@ ENV PORT=3000
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
 COPY --from=build /app/package.json ./
+
+CMD ["node", "build"]
