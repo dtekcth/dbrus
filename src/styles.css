@@ -1,0 +1,116 @@
+@import 'modern-normalize/modern-normalize.css';
+
+:root {
+	--messure: 75ch;
+	--ratio: 1.5;
+
+	--s-5: calc(var(--s-4) / var(--ratio));
+	--s-4: calc(var(--s-3) / var(--ratio));
+	--s-3: calc(var(--s-2) / var(--ratio));
+	--s-2: calc(var(--s-1) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+	--s0: 1em;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s1) * var(--ratio));
+	--s3: calc(var(--s2) * var(--ratio));
+	--s4: calc(var(--s3) * var(--ratio));
+	--s5: calc(var(--s4) * var(--ratio));
+
+	--border-box: var(--s-3);
+
+	--data-orange: #fa6607;
+}
+
+:root {
+	font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	:root {
+		font-family: 'Inter var', sans-serif;
+	}
+}
+
+* {
+	max-inline-size: var(--messure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+	max-inline-size: none;
+}
+
+blockquote,
+body,
+dd,
+dl,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	line-height: calc(1em * var(--ratio));
+	margin: 0;
+}
+
+h6 {
+	font-size: var(--s-2);
+}
+
+h5 {
+	font-size: var(--s-1);
+}
+
+p,
+h4 {
+	font-size: var(--s0);
+}
+
+h3 {
+	font-size: var(--s1);
+}
+
+h2 {
+	font-size: var(--s2);
+}
+
+h1 {
+	font-size: var(--s3);
+}
+
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+.center {
+	box-sizing: content-box;
+	max-width: var(--messure);
+	margin-inline: auto;
+	padding-inline: var(--s1);
+}
+
+.cluster {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--s1, 1em);
+}
+
+.cluster.space {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.box {
+	padding: var(--box-padding, var(--s1));
+}
+
+.box * {
+	color: inherit;
+}
