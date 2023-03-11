@@ -3,6 +3,10 @@
 	import DBrusLogo from './DBrusLogo.svelte';
 </script>
 
+<svelte:head>
+	<title>DBrus</title>
+</svelte:head>
+
 <header class="box">
 	<a href="/" class="center" style="color: white;">
 		<DBrusLogo />
