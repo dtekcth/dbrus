@@ -1,8 +1,10 @@
 <script lang="ts">
-	import Podcast from './Podcast.svelte';
-	import Pageinator from './Pageinator.svelte';
+	import { page } from '$app/stores';
+	import Pageinator from '../../Pageinator.svelte';
+	import Podcast from '../../Podcast.svelte';
 
 	export let data;
+	$: current = Number($page.params.num);
 </script>
 
 {#each data.pods as pod}
@@ -15,6 +17,7 @@
 		/>
 	</section>
 {/each}
+
 <div class="center">
-	<Pageinator current={1} page_count={data.page_count} />
+	<Pageinator {current} page_count={data.page_count} />
 </div>

@@ -1,7 +1,5 @@
-<script lang="ts">
-	import Podcast from './Podcast.svelte';
-	import Pageinator from './Pageinator.svelte';
-
+<script>
+	import Podcast from '../Podcast.svelte';
 	export let data;
 </script>
 
@@ -15,6 +13,3 @@
 		/>
 	</section>
 {/each}
-<div class="center">
-	<Pageinator current={1} page_count={data.page_count} />
-</div>

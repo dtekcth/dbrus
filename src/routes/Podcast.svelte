@@ -27,6 +27,13 @@
 <style>
 	h2 {
 		text-transform: uppercase;
+		font-size: var(--s1);
+	}
+
+	@media (min-width: 480px) {
+		h2 {
+			font-size: var(--s2);
+		}
 	}
 
 	audio {
