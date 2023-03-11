@@ -17,7 +17,7 @@ function pageCount(total = 1, limit: number) {
 }
 
 export async function fetchPodcasts(fetch: Fetch, page: number) {
-	const limit = 5;
+	const limit = 8;
 	const resp = await fetch(
 		`${apiUrl}/items/dbrus_podcasts${query({
 			sort: ['-date_created'],
@@ -35,11 +35,18 @@ export async function fetchPodcasts(fetch: Fetch, page: number) {
 }
 
 export async function searchPodcasts(fetch: Fetch, search: string) {
-	const limit = 5;
+	const limit = 8;
 	const resp = await fetch(`${apiUrl}/items/dbrus_podcasts/${query({ search, limit })}`);
 	const { data } = (await resp.json()) as { data: Podcast[] };
 
 	return {
 		pods: data.map(parsePodcast)
 	};
+}
+
+export async function fetchPodcastById(fetch: Fetch, id: number) {
+	const resp = await fetch(`${apiUrl}/items/dbrus_podcasts/${id}`);
+	const { data } = (await resp.json()) as { data: Podcast };
+
+	return parsePodcast(data);
 }

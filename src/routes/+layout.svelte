@@ -28,6 +28,10 @@
 		background-color: var(--data-orange);
 	}
 
+	header > a {
+		display: block;
+	}
+
 	main {
 		margin-block: var(--s2);
 	}
